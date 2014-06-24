@@ -1,4 +1,13 @@
 extends layout
 
 block content
-  h1 Hello Boulder!
+  .container.text-center
+    .row
+      .col-xs-4
+        h3 Chat with someone?
+    .row
+      .col-xs-4
+        textarea#messages
+    .row
+      .col-xs-4
+        input(type="text")#message-input

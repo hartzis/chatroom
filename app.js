@@ -22,10 +22,9 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  socket.emit('news', { hello: 'world'});
-  socket.on('message', function(data) {
-    console.log(data);
-    socket.emit('message', {yup: 'it works'});
+  socket.on('fromClientMessage', function(data) {
+    // console.log(data);
+    io.emit('fromServerMessage', {message: data.message});
   })
 });
 
